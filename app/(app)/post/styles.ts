@@ -1,0 +1,146 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1a1a1a',
+  },
+  scrollViewContent: {
+    flexGrow: 1,
+  },
+  content: {
+    padding: 20,
+  },
+  postCard: {
+    backgroundColor: '#2d3748',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    marginBottom: 4,
+  },
+  author: {
+    fontSize: 16,
+    color: '#a0aec0',
+    marginBottom: 12,
+  },
+  postContent: {
+    fontSize: 16,
+    color: '#ffffff',
+    lineHeight: 24,
+  },
+  engagementContainer: {
+    flexDirection: 'row',
+    marginTop: 12,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderColor: '#4a5568',
+    justifyContent: 'space-around',
+  },
+  engagementItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  engagementText: {
+    fontSize: 14,
+    color: '#a0aec0',
+    marginLeft: 4,
+  },
+  commentsSectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    marginBottom: 12,
+  },
+  addCommentContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  avatarPlaceholder: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#4a5568',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 8,
+  },
+  avatarText: {
+    color: '#ffffff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  commentInput: {
+    flex: 1,
+    backgroundColor: '#4a5568',
+    borderRadius: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    fontSize: 16,
+    color: '#ffffff',
+    borderWidth: 1,
+    borderColor: '#4a5568',
+    marginRight: 8,
+  },
+  commentButton: {
+    backgroundColor: '#23b5b5',
+    borderRadius: 20,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  commentButtonText: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  noCommentsText: {
+    fontSize: 16,
+    color: '#a0aec0',
+    textAlign: 'center',
+    marginTop: 12,
+  },
+  centeredLoader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1a1a1a',
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#e53e3e',
+  },
+  commentItem: {
+    flexDirection: 'row',
+    marginBottom: 12,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderColor: '#4a5568',
+  },
+  commentContentContainer: {
+    flex: 1,
+    marginLeft: 8,
+  },
+  commentAuthor: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    marginBottom: 2,
+  },
+  commentText: {
+    fontSize: 16,
+    color: '#ffffff',
+    lineHeight: 20,
+  },
+}); 

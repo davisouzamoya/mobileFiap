@@ -1,0 +1,183 @@
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#181e2a',
+  },
+  centeredLoader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#181e2a',
+  },
+  scrollViewContent: {
+    padding: 20,
+  },
+  pageTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 8,
+  },
+  pageSubtitle: {
+    fontSize: 15,
+    color: '#d1d5db',
+    marginBottom: 20,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    marginBottom: 20,
+    gap: 8,
+  },
+  searchInput: {
+    flex: 1,
+    backgroundColor: '#232b3b',
+    borderRadius: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    fontSize: 16,
+    color: '#fff',
+    borderWidth: 1,
+    borderColor: '#232b3b',
+  },
+  searchButton: {
+    backgroundColor: '#23b5b5',
+    borderRadius: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  searchButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  filterButton: {
+    borderColor: '#23b5b5',
+    borderWidth: 1,
+    borderRadius: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  filterButtonText: {
+    color: '#23b5b5',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  postsList: {
+    gap: 16,
+  },
+  emptyFeedCard: {
+    backgroundColor: '#232b3b',
+    borderRadius: 10,
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emptyFeedTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 8,
+  },
+  emptyFeedText: {
+    fontSize: 15,
+    color: '#d1d5db',
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  postCard: {
+    backgroundColor: '#232b3b',
+    borderRadius: 10,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#fff2',
+    marginBottom: 16,
+  },
+  postHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  postAuthor: {
+    fontSize: 14,
+    color: '#d1d5db',
+    marginBottom: 8,
+  },
+  postTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#23b5b5',
+    marginBottom: 8,
+  },
+  postContent: {
+    fontSize: 15,
+    color: '#fff',
+    marginBottom: 12,
+  },
+  postActions: {
+    flexDirection: 'row',
+    gap: 16,
+  },
+  postActionText: {
+    fontSize: 14,
+    color: '#d1d5db',
+  },
+  optionsButton: {
+    color: '#d1d5db',
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingHorizontal: 8,
+  },
+  createButton: {
+    backgroundColor: '#23b5b5',
+    borderRadius: 6,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  createButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
+  optionsMenu: {
+    position: 'absolute',
+    top: 30, // Adjust as needed to position below the three dots
+    right: 0,
+    backgroundColor: '#232b3b',
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#fff2',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    zIndex: 10, // Ensure menu is above other content
+  },
+  menuItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#fff1',
+  },
+  menuItemText: {
+    fontSize: 16,
+    color: '#fff',
+    marginLeft: 8,
+  },
+  deleteItemText: {
+    color: '#dc2626',
+  },
+});
+
+export default styles; 
