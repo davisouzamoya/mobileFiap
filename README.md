@@ -13,6 +13,10 @@
 
 O AstraMentor Mobile é uma plataforma educacional inovadora que conecta professores e alunos, facilitando o processo de ensino-aprendizado através de uma interface moderna e intuitiva. Desenvolvido como projeto de pós-graduação, o aplicativo demonstra as melhores práticas de desenvolvimento mobile com React Native e Expo.
 
+## 🎥 Demonstração
+
+[![Demo Video](https://img.youtube.com/vi/RPJYEy7NBlI/0.jpg)](https://www.youtube.com/watch?v=RPJYEy7NBlI)
+
 ## 🚀 Stack Tecnológica
 
 | Categoria | Tecnologias |
