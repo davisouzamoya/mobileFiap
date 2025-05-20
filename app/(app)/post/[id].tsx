@@ -46,9 +46,7 @@ export default function PostScreen() {
       if (error) throw error;
 
       setComments(data || []);
-      console.log('Comentários carregados:', data);
     } catch (error: any) {
-      console.error('Erro ao carregar comentários:', error);
       Alert.alert('Erro', error.message || 'Não foi possível carregar os comentários.');
     }
   }
@@ -60,18 +58,13 @@ export default function PostScreen() {
     }
 
     try {
-      console.log('Attempting to add comment:', commentText);
       const { data: { user } } = await supabase.auth.getUser();
 
       if (!user) {
-        console.log('User not authenticated.');
         Alert.alert('Erro', 'Você precisa estar logado para comentar.');
         return;
       }
 
-      console.log('User authenticated, user ID:', user.id);
-      console.log('Post ID:', id);
-      console.log('Comment content:', commentText.trim());
 
       const { error } = await supabase
         .from('comments')
@@ -88,7 +81,6 @@ export default function PostScreen() {
         throw error;
       }
 
-      console.log('Comentário adicionado e salvo com sucesso!');
       setCommentText('');
       await loadComments(post.id);
 

@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   optionsMenu: {
     position: 'absolute',
-    top: 30, // Adjust as needed to position below the three dots
+    top: 30, 
     right: 0,
     backgroundColor: '#232b3b',
     borderRadius: 6,
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    zIndex: 10, // Ensure menu is above other content
+    zIndex: 10, 
   },
   menuItem: {
     flexDirection: 'row',

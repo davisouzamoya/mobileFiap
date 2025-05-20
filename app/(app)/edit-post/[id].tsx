@@ -26,13 +26,7 @@ export default function EditPostScreen() {
 
         if (error) throw error;
 
-        // Verificar se o usuário é o autor do post
-        if (data.author_id !== user?.id) {
-          Alert.alert('Erro', 'Você não tem permissão para editar este post.');
-          router.back();
-          return;
-        }
-
+   
         setTitle(data.title);
         setDescription(data.description);
         setContent(data.content);

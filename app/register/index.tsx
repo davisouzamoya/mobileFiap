@@ -21,7 +21,6 @@ export default function Register() {
   const router = useRouter();
 
   const handleRegister = async () => {
-    // Validação com Zod
     const result = formSchema.safeParse({ name, email, password, userType });
     if (!result.success) {
       const firstError = result.error.errors[0]?.message || 'Dados inválidos.';
@@ -30,7 +29,6 @@ export default function Register() {
     }
     setIsLoading(true);
     try {
-      // Testar conexão com profiles (opcional)
       const { error: connectionError } = await supabase.from('profiles').select('id').limit(1);
       if (connectionError) {
         if (connectionError.message.includes('permission denied')) {
@@ -41,7 +39,6 @@ export default function Register() {
         setIsLoading(false);
         return;
       }
-      // Registrar usuário no Supabase Auth
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -57,7 +54,6 @@ export default function Register() {
         setIsLoading(false);
         return;
       }
-      // (Opcional) Criar perfil na tabela profiles
       if (data.user) {
         await supabase.from('profiles').upsert({
           id: data.user.id,

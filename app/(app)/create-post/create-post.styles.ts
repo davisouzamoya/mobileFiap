@@ -98,7 +98,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   removeImageButtonText: {
-    color: '#181e2a', // Ajustado para cor escura
+    color: '#181e2a', 
     fontWeight: 'bold',
     fontSize: 14,
   },

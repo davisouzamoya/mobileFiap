@@ -78,8 +78,7 @@ export default StyleSheet.create({
     color: '#d1d5db',
   },
   optionsButton: {
-    // Styles for the three-dot options button
-    padding: 8, // Adjust padding as needed for touch area
+    padding: 8, 
   },
   title: {
     fontSize: 24,
@@ -97,16 +96,16 @@ export default StyleSheet.create({
     width: '100%',
     borderRadius: 8,
     overflow: 'hidden',
-    backgroundColor: '#1a1f2b', // Placeholder background
+    backgroundColor: '#1a1f2b', 
   },
   postImage: {
     width: '100%',
-    height: 250, // Adjust height as needed
+    height: 250, 
     resizeMode: 'contain',
   },
    imageLoading: {
     width: '100%',
-    height: 250, // Match postImage height
+    height: 250, 
     backgroundColor: '#2a3344',
     justifyContent: 'center',
     alignItems: 'center',
@@ -134,10 +133,8 @@ export default StyleSheet.create({
     color: '#d1d5db',
   },
   likedButton: {
-    // Styles for liked state, e.g., color: '#dc2626'
   },
   likedButtonText: {
-    // Styles for liked state text
     color: '#dc2626',
   },
   commentsSection: {

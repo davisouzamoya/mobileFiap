@@ -15,7 +15,6 @@ export function AppNavigator() {
       setIsAuthenticated(!!session);
     });
 
-    // Initial check
     supabase.auth.getSession().then(({ data: { session } }) => {
       setIsAuthenticated(!!session);
     });
@@ -25,7 +24,6 @@ export function AppNavigator() {
     };
   }, []);
 
-  // Handle routing based on auth state
   useEffect(() => {
     if (isAuthenticated === null) return;
 

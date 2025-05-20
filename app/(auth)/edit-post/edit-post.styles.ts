@@ -30,9 +30,8 @@ export default StyleSheet.create({
     color: '#d1d5db',
     marginBottom: 16,
   },
-  // Add styles for the form fields, buttons, etc. similar to create-post
   formContainer: {
-    // Styles for the container holding the form elements
+
   },
   input: {
     backgroundColor: '#1a1f2b',
@@ -63,8 +62,8 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   imagePreview: {
-    width: '100%', // Adjust as needed
-    height: 200, // Adjust as needed
+    width: '100%', 
+    height: 200, 
     resizeMode: 'contain',
     borderRadius: 8,
   },

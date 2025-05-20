@@ -23,7 +23,7 @@ export default function EditPostPage() {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
-  // State for form fields
+  
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
@@ -100,7 +100,7 @@ export default function EditPostPage() {
       console.error('Erro ao atualizar post:', error);
       Alert.alert('Erro', 'Ocorreu um erro ao atualizar o post.');
     } else {
-      router.push('/feed' as any); // Navigate to feed after successful update
+      router.push('/feed' as any); 
     }
 
     setIsSaving(false);
@@ -115,7 +115,7 @@ export default function EditPostPage() {
   }
 
   if (!isAuthorized || !post) {
-    return null; // Redirection handled in useEffect
+    return null; 
   }
 
   return (

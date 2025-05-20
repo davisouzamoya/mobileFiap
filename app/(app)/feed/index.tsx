@@ -7,7 +7,7 @@ import { ActivityIndicator, Alert, ScrollView, Text, TextInput, TouchableOpacity
 import styles from '../../../src/styles/feed.styles';
 import { supabase } from '../../utils/supabase';
 
-// Placeholder para o componente PostCard
+
 function PostCard({ post, router, isTeacher, currentUserId, onDelete }: { post: any; router: any; isTeacher: boolean; currentUserId: string | undefined; onDelete: (postId: string) => void }) {
   const timeAgo = post.created_at 
     ? formatDistanceToNow(new Date(post.created_at), { 
@@ -18,16 +18,16 @@ function PostCard({ post, router, isTeacher, currentUserId, onDelete }: { post: 
 
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-  // Check if the logged-in user is the author of the post
+  
   const isAuthor = isTeacher && currentUserId && post.author_id === currentUserId;
 
   const handleEdit = () => {
-    setIsMenuVisible(false); // Close menu
+    setIsMenuVisible(false); 
     router.push(`/edit-post/${post.id}` as any);
   };
 
   const handleDelete = () => {
-    setIsMenuVisible(false); // Close menu
+    setIsMenuVisible(false); 
     Alert.alert(
       'Confirmar exclusão',
       'Tem certeza que deseja excluir este post? Esta ação não pode ser desfeita.',
@@ -100,17 +100,17 @@ export default function FeedPage() {
     checkUserType();
   }, []);
 
-  // Adaptação da lógica de carregar posts do web
+  
   const loadPosts = async (query = '') => {
     try {
       setIsRefreshing(true);
-      // Adaptação: Buscar posts no Supabase
+      
       let queryBuilder = supabase
         .from('posts')
         .select('id, title, content, created_at, author_id, profiles(name), comments(count)');
 
       if (query) {
-        // Busca simples por título ou conteúdo (ajuste conforme sua tabela)
+        
         queryBuilder = queryBuilder.or(`title.ilike.%${query}%,content.ilike.%${query}%`);
       }
 
@@ -118,7 +118,7 @@ export default function FeedPage() {
 
       if (error) throw new Error(error.message);
 
-      // Formatar dados se necessário (ex: adicionar nome do autor)
+      
       const formattedPosts = data?.map(post => ({
         ...post,
         author: post.profiles?.[0]?.name || 'Desconhecido',
@@ -136,11 +136,11 @@ export default function FeedPage() {
   };
 
   useEffect(() => {
-    // Carregar posts na montagem e ao mudar a query de busca
+    
     loadPosts(searchQuery);
   }, [searchQuery]);
 
-  // Reload posts when the screen comes into focus
+  
   useFocusEffect(
     React.useCallback(() => {
       loadPosts(searchQuery);
@@ -148,8 +148,7 @@ export default function FeedPage() {
   );
 
   const handleSearch = () => {
-    // O input já atualiza searchQuery, useEffect se encarrega de carregar
-    // Se quiser um botão de buscar explícito, descomente e use loadPosts(searchQuery);
+    
   };
 
   const handleRefresh = () => {
@@ -158,7 +157,7 @@ export default function FeedPage() {
 
   const handleDeletePost = async (postId: string) => {
     try {
-      setIsLoading(true); // Or a specific deleting state
+      setIsLoading(true);
       const { error } = await supabase
         .from('posts')
         .delete()
@@ -169,23 +168,22 @@ export default function FeedPage() {
         Alert.alert('Erro', 'Ocorreu um erro ao deletar o post.');
       } else {
         Alert.alert('Sucesso', 'Post deletado com sucesso!');
-        loadPosts(searchQuery); // Refresh the list after deletion
+        loadPosts(searchQuery);
       }
     } catch (error: any) {
       console.error('Erro ao deletar post:', error);
       Alert.alert('Erro', error.message || 'Não foi possível deletar o post. Tente novamente.');
     } finally {
-      setIsLoading(false); // Or the specific deleting state
+      setIsLoading(false);
     }
   };
 
-  // TODO: Implementar handlePostDeleted se necessário
+  
   const handlePostDeleted = () => {
     loadPosts(searchQuery);
   };
 
-  // TODO: Implementar useAuth ou usar supabase.auth.getUser() como no Dashboard
-  // Por enquanto, assumindo que o usuário está carregado ou não necessário para o feed público
+  
 
   if (isLoading) {
     return (
@@ -195,8 +193,7 @@ export default function FeedPage() {
     );
   }
 
-  // TODO: Implementar tela de erro ou redirecionamento se não autenticado e feed for privado
-  // Por enquanto, mostrando feed vazio ou com erro
+  
 
   return (
     <View style={styles.container}>
@@ -220,7 +217,7 @@ export default function FeedPage() {
             placeholderTextColor="#d1d5db"
             value={searchQuery}
             onChangeText={setSearchQuery}
-            onSubmitEditing={handleSearch} // Opcional: busca ao pressionar Enter
+            onSubmitEditing={handleSearch} 
           />
         </View>
 

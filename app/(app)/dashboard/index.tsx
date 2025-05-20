@@ -52,7 +52,7 @@ export default function Dashboard() {
   );
 }
 
-// Card de resumo
+
 function SummaryCard({ label, value }: { label: string; value: string }) {
   return (
     <View style={styles.summaryCard}>

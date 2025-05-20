@@ -5,12 +5,11 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { supabase } from '../utils/supabase';
 
-export function CustomDrawerContent(props) {
+export function CustomDrawerContent(props: any) {
   const router = useRouter();
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
-    // O AppNavigator cuidará do redirecionamento para a tela de login
   };
 
   return (

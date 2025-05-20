@@ -112,16 +112,13 @@ export default function CreatePostPage() {
   
       if (image) {
         try {
-          console.log('Iniciando upload da imagem...')
   
           const fileExt = image.uri.split('.').pop()
           const fileName = `${Date.now()}.${fileExt}`
           const filePath = `${session.user.id}/${fileName}`
   
-          console.log('Supabase User ID:', session.user.id)
-          console.log('Generated File Path:', filePath)
   
-          // 🔥 Converter imagem em Blob
+          
           const response = await fetch(image.uri)
           const blob = await response.blob()
   
@@ -144,7 +141,6 @@ export default function CreatePostPage() {
             .getPublicUrl(filePath)
   
           imageUrl = publicUrlData.publicUrl
-          console.log('URL pública da imagem:', imageUrl)
   
         } catch (error) {
           console.error('Erro ao fazer upload da imagem:', error)
@@ -155,7 +151,6 @@ export default function CreatePostPage() {
         }
       }
   
-      console.log('Salvando post com imageUrl:', imageUrl)
   
       const { error: insertError } = await supabase
         .from('posts')
@@ -176,7 +171,6 @@ export default function CreatePostPage() {
         throw new Error('Erro ao criar o post')
       }
   
-      console.log('Post criado com sucesso')
       Alert.alert('Sucesso', 'Post criado com sucesso!')
       router.push('/feed')
   
@@ -238,8 +232,8 @@ export default function CreatePostPage() {
             autoCapitalize="sentences"
           />
 
-          <Text style={styles.label}>Imagem</Text>
-          <View style={styles.imageButtonsContainer}>
+          {/* <Text style={styles.label}>Imagem</Text> */}
+          {/* <View style={styles.imageButtonsContainer}>
             <TouchableOpacity
               style={styles.imageButton}
               onPress={() => pickImage(false)}
@@ -253,7 +247,7 @@ export default function CreatePostPage() {
             >
               <Text style={styles.imageButtonText}>Tirar Foto</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
 
           {image && (
             <View style={styles.imagePreview}>

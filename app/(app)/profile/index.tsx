@@ -20,7 +20,7 @@ type Post = {
   title: string
   description: string | null
   created_at: string
-  // Add other post properties you might need, e.g., comments count
+  
 }
 
 export default function Profile() {
@@ -111,7 +111,6 @@ export default function Profile() {
   }
 
   const handleDeletePost = (postId: string) => {
-    console.log('DENTRO DO handleDeletePost')
     Alert.alert(
       'Confirmar exclusão',
       'Tem certeza que deseja excluir este post? Esta ação não pode ser desfeita.',
@@ -121,7 +120,7 @@ export default function Profile() {
           text: 'Excluir',
           style: 'destructive',
           onPress: async () => {
-            setPostsLoading(true); // Show loading while deleting and fetching
+            setPostsLoading(true); 
             const { error } = await supabase
               .from('posts')
               .delete()
@@ -133,10 +132,9 @@ export default function Profile() {
             } else {
               Alert.alert('Sucesso', 'Post deletado com sucesso!');
               if (user?.id) {
-                fetchPosts(user.id, searchQuery); // Refresh posts list
+                fetchPosts(user.id, searchQuery); 
               }
             }
-            // setLoading(false); // Loading is handled by fetchPosts
           },
         },
       ]
@@ -154,25 +152,21 @@ export default function Profile() {
             </Text>
 
             <View>
-              {/* Email Row */}
               <View style={styles.infoRow}>
                 <Text style={styles.infoLabel}>Email</Text>
                 <Text style={styles.infoValue}>{user?.email || 'Não informado'}</Text>
               </View>
 
-              {/* Tipo de Usuário Row */}
               <View style={styles.infoRow}>
                 <Text style={styles.infoLabel}>Tipo de Usuário</Text>
                 <Text style={styles.infoValue}>{isTeacher ? 'Professor' : 'Aluno'}</Text>
               </View>
 
-              {/* Nome Row */}
               <View style={styles.infoRow}>
                 <Text style={styles.infoLabel}>Nome</Text>
                 <Text style={styles.infoValue}>{name || 'Não informado'}</Text>
               </View>
 
-              {/* Matrícula Row */}
               <View style={styles.infoRow}>
                 <Text style={styles.infoLabel}>Matrícula</Text>
                 <Text style={styles.infoValue}>{registrationNumber || 'Não informado'}</Text>
@@ -184,13 +178,11 @@ export default function Profile() {
         return (
           <View style={styles.infoCard}>
              <View style={styles.sectionHeader}>
-                {/* Left side: Title and Subtitle */}
                 <View>
                    <Text style={styles.sectionTitle}>Meus Conteúdos</Text>
                    <Text style={styles.pageSubtitle}>Painel administrativo dos seus conteúdos educacionais.</Text>
                 </View>
 
-               {/* Right side: Create Content Button */}
              
              </View>
              {isTeacher && (
@@ -201,7 +193,6 @@ export default function Profile() {
                 </View>
               )}
 
-            {/* Search Filter */}
             <View style={styles.searchFilterContainer}>
             
               <TextInput
@@ -213,7 +204,6 @@ export default function Profile() {
               />
             </View>
 
-            {/* Posts List */}
             {postsLoading ? (
               <ActivityIndicator size="large" color="#23b5b5" style={styles.loadingContainer} />
             ) : posts && posts.length > 0 ? (
@@ -256,7 +246,6 @@ export default function Profile() {
             <Text style={styles.sectionTitle}>Configurações</Text>
              <Text style={styles.pageSubtitle}>Gerencie suas preferências e configurações de conta.</Text>
 
-             {/* Notificações por Email */}
              <View style={styles.settingsSection}>
                <View style={styles.settingsRow}>
                  <View style={styles.settingsTextContainer}>
@@ -272,7 +261,6 @@ export default function Profile() {
                </View>
              </View>
 
-             {/* Segurança da Conta */}
              <View style={styles.settingsSection}>
                 <View style={styles.settingsRow}>
                  <View style={styles.settingsTextContainer}>
@@ -288,7 +276,6 @@ export default function Profile() {
                </View>
              </View>
 
-             {/* Excluir Conta */}
               <View style={styles.settingsSectionLast}>
                 <View style={styles.settingsRow}>
                  <View style={styles.settingsTextContainer}>
